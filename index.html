@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="pt-AO">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>NEXUS PLAY | Arena Gamer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="navbar">
+                <div class="logo">
+                    <h1>⚡ NEXUS PLAY</h1>
+                    <p>ARENA GAMER — O futuro do entretenimento</p>
+                </div>
+                <button class="menu-toggle" id="mobile-menu" aria-label="Abrir menu">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <ul class="nav-links" id="nav-links">
+                    <li><a href="index.html" class="active">Início</a></li>
+                    <li><a href="jogos.html">Jogos</a></li>
+                    <li><a href="sobre.html">Sobre</a></li>
+                    <li><a href="noticias.html">Notícias</a></li>
+                    <li><a href="gestao.html">Gestão</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                </ul>
+                <button id="openLoginBtn" class="btn-login" type="button">
+                    <i class="fas fa-id-card"></i> Área Restrita
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section id="inicio" class="hero">
+            <div class="container hero-content">
+                <h2>Entre na Arena</h2>
+                <p>Competições globais, jogos exclusivos e uma comunidade de +50k gamers. O próximo nível começa aqui.</p>
+                <a href="#jogos" class="btn-primary">🎮 Explorar Mundo Gamer</a>
+            </div>
+        </section>
+
+        <section id="jogos">
+            <div class="container">
+                <h2 class="section-title">Jogos em Destaque</h2>
+                <div class="cards-grid">
+                    <article class="card">
+                        <div class="card-img">
+                            <img src="https://images.unsplash.com/photo-1612287230202-1ff1d85d1bdf?w=500&h=250&fit=crop" alt="Cyber Rift">
+                        </div>
+                        <div class="card-content">
+                            <h3>Cyber Rift</h3>
+                            <p>FPS futurista com inteligência artificial adaptativa.</p>
+                        </div>
+                    </article>
+                    <article class="card">
+                        <div class="card-img">
+                            <img src="https://images.unsplash.com/photo-1552820728-8b83bb6b773f?w=500&h=250&fit=crop" alt="Nitro Legends">
+                        </div>
+                        <div class="card-content">
+                            <h3>Nitro Legends</h3>
+                            <p>Corridas urbanas em realidade aumentada.</p>
+                        </div>
+                    </article>
+                    <article class="card">
+                        <div class="card-img">
+                            <img src="https://images.unsplash.com/photo-1542751371-adc38448a05e?w=500&h=250&fit=crop" alt="Dominion War">
+                        </div>
+                        <div class="card-content">
+                            <h3>Dominion War</h3>
+                            <p>Battle royale com 100 jogadores e mapas dinâmicos.</p>
+                        </div>
+                    </article>
+                    <article class="card">
+                        <div class="card-img">
+                            <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=500&h=250&fit=crop" alt="Launch Hub">
+                        </div>
+                        <div class="card-content">
+                            <h3>Launch Hub</h3>
+                            <p>Simulador espacial com missões cooperativas e universo aberto.</p>
+                        </div>
+                    </article>
+                    <article class="card">
+                        <div class="card-img">
+                            <img src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=500&h=250&fit=crop" alt="Shadow Ops">
+                        </div>
+                        <div class="card-content">
+                            <h3>Shadow Ops</h3>
+                            <p>Operações furtivas em uma campanha tensa com aliados insubstituíveis.</p>
+                        </div>
+                    </article>
+                    <article class="card">
+                        <div class="card-img">
+                            <img src="https://images.unsplash.com/photo-1511512578047-dfb367046420?w=500&h=250&fit=crop" alt="Arena Neon">
+                        </div>
+                        <div class="card-content">
+                            <h3>Arena Neon</h3>
+                            <p>Combate rápido com power-ups e arenas estilizadas em neon.</p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="sobre">
+            <div class="container about-grid">
+                <div class="about-text">
+                    <h3>A nova era dos e-sports</h3>
+                    <p>A Nexus Play é a plataforma definitiva para gamers, desenvolvedores e organizadores. Oferecemos torneios mensais, suporte 24/7 e um sistema inovador de ranking.</p>
+                    <p>Com mais de 10 mil jogadores ativos, somos a casa dos maiores campeonatos da região.</p>
+                </div>
+                <div class="about-stats">
+                    <div class="stat-card">
+                        <span id="totalJogadoresCount">0</span>
+                        <p>Jogadores Registrados</p>
+                    </div>
+                    <div class="stat-card stat-card-secondary">
+                        <span id="totalStaffCount">0</span>
+                        <p>Membros da Equipa</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="noticias" class="news-section">
+            <div class="container">
+                <h2 class="section-title">Últimas Notícias</h2>
+                <div class="cards-grid">
+                    <article class="card">
+                        <div class="card-img">
+                            <img src="https://images.unsplash.com/photo-1511512578047-dfb367046420?w=500&h=250&fit=crop" alt="Torneio internacional">
+                        </div>
+                        <div class="card-content">
+                            <h3>Torneio Internacional</h3>
+                            <p>Inscrições abertas para o Nexus Masters. Prêmio de 1 milhão Kz.</p>
+                        </div>
+                    </article>
+                    <article class="card">
+                        <div class="card-img">
+                            <img src="https://images.unsplash.com/photo-1580327344181-c1163234e5a0?w=500&h=250&fit=crop" alt="Lançamento">
+                        </div>
+                        <div class="card-content">
+                            <h3>Cyber Rift 2.0</h3>
+                            <p>Novo modo cooperativo e gráficos ultrarrealistas.</p>
+                        </div>
+                    </article>
+                    <article class="card">
+                        <div class="card-img">
+                            <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=500&h=250&fit=crop" alt="Ranking atualizado">
+                        </div>
+                        <div class="card-content">
+                            <h3>Ranking atualizado</h3>
+                            <p>Conheça as mudanças no quadro de líderes após a última temporada.</p>
+                        </div>
+                    </article>
+                    <article class="card">
+                        <div class="card-img">
+                            <img src="https://images.unsplash.com/photo-1545239351-1141bd82e8a6?w=500&h=250&fit=crop" alt="Parceria Tech">
+                        </div>
+                        <div class="card-content">
+                            <h3>Parceria Tech</h3>
+                            <p>Nova união com estúdios parceiros para eventos e transmissões exclusivas.</p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="contacto">
+            <div class="container contact-grid">
+                <div>
+                    <h3>📡 Contacto</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> Luanda, Gaming Hub - Angola</p>
+                    <p>hello@nexusplay.ao | +244 999 888 777</p>
+                </div>
+                <div class="map-wrapper">
+                    <iframe width="300" height="180" title="Mapa de Luanda" src="https://maps.google.com/maps?q=Luanda%2C%20Angola&t=&z=12&output=embed" loading="lazy"></iframe>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>© 2026 Nexus Play — Onde os campeões nascem. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <div id="loginModal" class="modal" aria-hidden="true">
+        <div class="modal-content" role="dialog" aria-labelledby="authTitle">
+            <button class="close-modal" type="button" aria-label="Fechar modal">&times;</button>
+            <div class="auth-tabs-switch">
+                <button id="authTabLogin" class="auth-tab-btn active" type="button" data-tab="login">🔐 Entrar</button>
+                <button id="authTabSignup" class="auth-tab-btn" type="button" data-tab="signup">📝 Cadastro</button>
+            </div>
+
+            <div id="loginSection" class="auth-section active">
+                <h3 id="authTitle">Acesso Staff</h3>
+                <input type="text" id="loginUser" placeholder="Usuário" autocomplete="username">
+                <input type="password" id="loginPass" placeholder="Senha" autocomplete="current-password">
+                <button id="doLoginBtn" class="btn-primary" type="button">Entrar</button>
+                <p class="hint">demo: admin/admin | diretor/diretor | rh/rh | gm/gm | player/player</p>
+            </div>
+
+            <div id="signupSection" class="auth-section">
+                <h3>Criar Conta</h3>
+                <input type="text" id="signupUser" placeholder="Usuário" autocomplete="username">
+                <input type="email" id="signupEmail" placeholder="Email" autocomplete="email">
+                <input type="password" id="signupPass" placeholder="Senha" autocomplete="new-password">
+                <input type="password" id="signupConfirm" placeholder="Confirmar Senha" autocomplete="new-password">
+                <button id="doSignupBtn" class="btn-primary" type="button">Criar Conta</button>
+                <p class="hint">Após criar, você terá acesso como Jogador Pro</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js" defer></script>
+</body>
+</html>
