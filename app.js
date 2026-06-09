@@ -15,7 +15,26 @@ const STORAGE_KEYS = {
     staff: 'nexus_staff',
     images: 'nexus_images'
 };
+const AUTH_STORAGE_KEY = 'nexus_auth_users';
 //-para mais informações entre em contacto 931471731---------lote by
+
+function loadAuthUsers() {
+    const storedUsers = localStorage.getItem(AUTH_STORAGE_KEY);
+    if (storedUsers) {
+        try {
+            const parsed = JSON.parse(storedUsers);
+            Object.assign(USERS, parsed);
+        } catch (error) {
+            console.warn('Falha ao carregar usuários salvos:', error);
+        }
+    } else {
+        saveAuthUsers();
+    }
+}
+
+function saveAuthUsers() {
+    localStorage.setItem(AUTH_STORAGE_KEY, JSON.stringify(USERS));
+}
 
 // ==================== INIT ====================
 function initData() {
@@ -99,7 +118,11 @@ function login(username, password) {
     const account = USERS[username];
     if (!account || account.senha !== password) return false;
 
-    sessionStorage.setItem('loggedUser', JSON.stringify({ username }));
+    sessionStorage.setItem('loggedUser', JSON.stringify({
+        username,
+        perfil: account.perfil,
+        permissoes: account.permissoes
+    }));
     window.location.href = 'dashboard.html';
     return true;
 }
@@ -130,8 +153,17 @@ function handleSignup() {
         return;
     }
 
-    USERS[username] = { senha: password, perfil: 'Jogador Pro', permissoes: ['players_readonly'] };
-    sessionStorage.setItem('loggedUser', JSON.stringify({ username }));
+    USERS[username] = {
+        senha: password,
+        perfil: 'Jogador Pro',
+        permissoes: ['players_readonly']
+    };
+    saveAuthUsers();
+    sessionStorage.setItem('loggedUser', JSON.stringify({
+        username,
+        perfil: 'Jogador Pro',
+        permissoes: ['players_readonly']
+    }));
 
     clearValues(['signupUser', 'signupEmail', 'signupPass', 'signupConfirm']);
     alert('Conta criada com sucesso! Redirecionando...');
@@ -140,6 +172,7 @@ function handleSignup() {
 
 // ==================== APP INIT ====================
 function init() {
+    loadAuthUsers();
     initData();
     updateCounters();
 

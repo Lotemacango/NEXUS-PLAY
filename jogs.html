@@ -364,7 +364,11 @@
                     <li><a href="#inicio">Início</a></li><li><a href="#jogos">Jogos</a></li><li><a href="#sobre">Sobre</a></li>
                     <li><a href="#noticias">Notícias</a></li><li><a href="#gestao">Gestão</a></li><li><a href="#contacto">Contacto</a></li>
                 </ul>
-                <div><button id="openLoginBtn" class="btn-login"><i class="fas fa-id-card"></i> Área Restrita</button></div>
+                <div>
+                    <button id="openLoginBtn" class="btn-login"><i class="fas fa-id-card"></i> Área Restrita</button>
+                    <span id="loggedUserBadge" class="user-badge"></span>
+                    <button id="logoutBtn" class="btn-ghost" style="display:none;"><i class="fas fa-sign-out-alt"></i> Sair</button>
+                </div>
             </div>
         </div>
     </header>
@@ -573,5 +577,6 @@
             document.getElementById('mobile-menu').addEventListener('click', () => document.getElementById('nav-links').classList.toggle('active'));
         });
     </script>
+    <script src="session-user.js" defer></script>
 </body>
 </html>

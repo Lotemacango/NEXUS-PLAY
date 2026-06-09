@@ -113,9 +113,65 @@ a {
 }
 
 .btn-ghost {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    min-width: 120px;
+    padding: 10px 22px;
     background: rgba(255,255,255,0.08);
-    color: #f0f0ff;
-    box-shadow: none;
+    color: #f0f2fe;
+    border: 1px solid rgba(0, 242, 254, 0.2);
+    border-radius: 40px;
+    text-decoration: none;
+    box-shadow: 0 0 8px rgba(0, 242, 254, 0.16);
+    transition: 0.25s ease;
+}
+
+.btn-home {
+    background: linear-gradient(135deg, rgba(0,242,254,0.18), rgba(255,0,204,0.18));
+    border-color: rgba(255, 0, 204, 0.4);
+    color: #f8f9ff;
+    box-shadow: 0 12px 28px rgba(0, 242, 254, 0.18);
+}
+
+.user-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.55rem;
+    padding: 10px 16px;
+    border-radius: 999px;
+    background: rgba(0, 242, 254, 0.1);
+    color: #d7f7ff;
+    border: 1px solid rgba(0, 242, 254, 0.24);
+    font-size: 0.95rem;
+    font-weight: 700;
+    box-shadow: 0 0 10px rgba(0, 242, 254, 0.12);
+    transition: 0.2s ease;
+}
+
+.user-badge i {
+    color: #00f2fe;
+}
+
+.btn-home:hover {
+    transform: translateY(-2px);
+    background: linear-gradient(135deg, rgba(0,242,254,0.35), rgba(255,0,204,0.35));
+    color: #ffffff;
+    box-shadow: 0 0 24px rgba(255, 0, 204, 0.35);
+}
+
+.btn-ghost:hover {
+    transform: translateY(-2px);
+    background: rgba(0, 242, 254, 0.15);
+    color: #ffffff;
+    box-shadow: 0 0 12px rgba(0, 242, 254, 0.25);
+}
+
+.navbar-right button,
+.navbar-right .btn-ghost,
+.navbar-right .btn-home {
+    min-width: 140px;
 }
 
 .hero {

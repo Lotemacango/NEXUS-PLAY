@@ -6,6 +6,7 @@ const STORAGE_KEYS = {
     staff: 'nexus_staff',
     images: 'nexus_images'
 };
+const AUTH_STORAGE_KEY = 'nexus_auth_users';
     
 //-para mais informações entre em contacto 931471731---------lote by
 
@@ -54,6 +55,24 @@ let currentUser = null;
 
 function actionButtons(type) {
     return `<i class="fas fa-edit edit-icon" data-type="${type}" data-action="edit"></i><i class="fas fa-trash-alt delete-icon" data-type="${type}" data-action="delete"></i>`;
+}
+
+function loadAuthUsers() {
+    const storedUsers = localStorage.getItem(AUTH_STORAGE_KEY);
+    if (storedUsers) {
+        try {
+            const parsed = JSON.parse(storedUsers);
+            Object.assign(USERS, parsed);
+        } catch (error) {
+            console.warn('Falha ao carregar usuários salvos:', error);
+        }
+    } else {
+        saveAuthUsers();
+    }
+}
+
+function saveAuthUsers() {
+    localStorage.setItem(AUTH_STORAGE_KEY, JSON.stringify(USERS));
 }
 
 function initData() {
@@ -354,13 +373,20 @@ function restoreSession() {
         window.location.href = 'index.html';
         return false;
     }
-    const { username } = JSON.parse(saved);
-    const account = USERS[username];
+
+    loadAuthUsers();
+    const { username, perfil, permissoes } = JSON.parse(saved);
+    const account = USERS[username] || (perfil ? { perfil, permissoes } : null);
+
     if (!account) {
         window.location.href = 'index.html';
         return false;
     }
-    currentUser = { ...account, username };
+    currentUser = {
+        username,
+        perfil: account.perfil,
+        permissoes: account.permissoes
+    };
     return true;
 }
 

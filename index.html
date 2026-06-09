@@ -29,9 +29,13 @@
                     <li><a href="gestao.html">Gestão</a></li>
                     <li><a href="contacto.html">Contacto</a></li>
                 </ul>
-                <button id="openLoginBtn" class="btn-login" type="button">
-                    <i class="fas fa-id-card"></i> Área Restrita
-                </button>
+                <div class="header-actions">
+                    <button id="openLoginBtn" class="btn-login" type="button">
+                        <i class="fas fa-id-card"></i> Área Restrita
+                    </button>
+                    <span id="loggedUserBadge" class="user-badge"></span>
+                    <button id="logoutBtn" class="btn-ghost" style="display:none;"><i class="fas fa-sign-out-alt"></i> Sair</button>
+                </div>
             </div>
         </div>
     </header>
@@ -221,5 +225,6 @@
     </div>
 
     <script src="app.js" defer></script>
+    <script src="session-user.js" defer></script>
 </body>
 </html>

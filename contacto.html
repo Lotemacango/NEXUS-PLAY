@@ -26,7 +26,9 @@
                     <li><a href="gestao.html">Gestão</a></li>
                     <li><a href="contacto.html" class="active">Contacto</a></li>
                 </ul>
-                <a href="index.html" class="btn-login">Área Restrita</a>
+                <a href="index.html" id="loginAnchor" class="btn-login">Área Restrita</a>
+                <span id="loggedUserBadge" class="user-badge"></span>
+                <button id="logoutBtn" class="btn-ghost" style="display:none;"><i class="fas fa-sign-out-alt"></i> Sair</button>
             </div>
         </div>
     </header>
@@ -78,5 +80,6 @@
             <p>© 2026 Nexus Play — Estamos prontos para conectar você ao jogo.</p>
         </div>
     </footer>
+    <script src="session-user.js" defer></script>
 </body>
 </html>
