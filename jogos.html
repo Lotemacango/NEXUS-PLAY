@@ -37,91 +37,131 @@
         <section class="page-banner" style="background-image:url('https://images.unsplash.com/photo-1511512578047-dfb367046420?w=1600&h=900&fit=crop');">
             <div class="container banner-copy">
                 <h2>Explora o Universo dos Jogos</h2>
-                <p>Descobre títulos exclusivos, eventos em tempo real e playlists selecionadas para cada estilo de gamer.</p>
-                <a href="#colecao" class="btn-primary">Ver Coleção</a>
+                <p>Joga diretamente na plataforma com títulos criados em HTML, CSS e JavaScript. Profissional, imersivo e com experiências únicas.</p>
+                <a href="#gameHub" class="btn-primary">Iniciar Jogatina</a>
             </div>
         </section>
 
-        <section id="colecao">
+        <section id="gameHub" class="game-hub">
             <div class="container">
-                <h2 class="section-title">Coleção de Jogos</h2>
-                <div class="cards-grid">
-                    <article class="card">
-                        <div class="card-img">
-                            <img src="https://images.unsplash.com/photo-1612287230202-1ff1d85d1bdf?w=500&h=250&fit=crop" alt="Cyber Rift">
+                <div class="game-hub-header">
+                    <div>
+                        <h2 class="section-title">Hub de Jogos Interativos</h2>
+                        <p>Escolhe o teu jogo favorito: Pac-Man, Super Mario, Jogo da Velha, Xadrez, War/Paciência, Corrida 3D ou Kill B. Tudo integrado na plataforma.</p>
+                    </div>
+                    <button id="resetGameBtn" class="btn-primary">Reiniciar Jogo</button>
+                </div>
+
+                <div class="hub-tabs" role="tablist" aria-label="Seleção de jogos">
+                    <button class="tab-btn active" data-game="pacman"><i class="fas fa-ghost"></i> Pac-Man</button>
+                    <button class="tab-btn" data-game="mario"><i class="fas fa-flag"></i> Super Mario</button>
+                    <button class="tab-btn" data-game="tictactoe"><i class="fas fa-th-large"></i> Jogo da Velha</button>
+                    <button class="tab-btn" data-game="chess"><i class="fas fa-chess"></i> Xadrez</button>
+                    <button class="tab-btn" data-game="cards"><i class="fas fa-heart"></i> War/Paciência</button>
+                    <button class="tab-btn" data-game="racing"><i class="fas fa-car-side"></i> Corrida 3D</button>
+                    <button class="tab-btn" data-game="killb"><i class="fas fa-bomb"></i> Kill B</button>
+                </div>
+
+                <div class="game-panel">
+                    <div class="game-meta">
+                        <div>
+                            <h3 id="gameTitle">Pac-Man Clássico</h3>
+                            <p id="gameDescription">Move o Pac-Man pelo labirinto, recolhe todos os pontos e evita as paredes.</p>
                         </div>
-                        <div class="card-content">
-                            <h3>Cyber Rift</h3>
-                            <p>FPS futurista com inteligência artificial adaptativa e arenas neon.</p>
+                        <div class="game-status">
+                            <div class="status-card">
+                                <span class="status-label">Status</span>
+                                <p id="gameStatus">Pronto para jogar.</p>
+                            </div>
+                            <div class="status-card">
+                                <span class="status-label">Controles</span>
+                                <p id="gameInstructions">Setas para mover / Espaço para saltar no Mario / Clique para jogar no tabuleiro.</p>
+                            </div>
                         </div>
-                    </article>
-                    <article class="card">
-                        <div class="card-img">
-                            <img src="https://images.unsplash.com/photo-1552820728-8b83bb6b773f?w=500&h=250&fit=crop" alt="Nitro Legends">
+                    </div>
+                    <div class="game-display">
+                        <div id="gameCanvasWrapper" class="game-canvas-wrapper">
+                            <canvas id="gameCanvas" width="880" height="520"></canvas>
                         </div>
-                        <div class="card-content">
-                            <h3>Nitro Legends</h3>
-                            <p>Velocidade urbana e drift de outro mundo em pistas líquidas.</p>
-                        </div>
-                    </article>
-                    <article class="card">
-                        <div class="card-img">
-                            <img src="https://images.unsplash.com/photo-1542751371-adc38448a05e?w=500&h=250&fit=crop" alt="Dominion War">
-                        </div>
-                        <div class="card-content">
-                            <h3>Dominion War</h3>
-                            <p>Battle royale tático com 100 jogadores, clãs e cartas de comando.</p>
-                        </div>
-                    </article>
-                    <article class="card">
-                        <div class="card-img">
-                            <img src="https://images.unsplash.com/photo-1511512578047-dfb367046420?w=500&h=250&fit=crop" alt="Arena Neon">
-                        </div>
-                        <div class="card-content">
-                            <h3>Arena Neon</h3>
-                            <p>Combates rápidos com heróis digitais, poderes e mapas mutáveis.</p>
-                        </div>
-                    </article>
-                    <article class="card">
-                        <div class="card-img">
-                            <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=500&h=250&fit=crop" alt="Launch Hub">
-                        </div>
-                        <div class="card-content">
-                            <h3>Launch Hub</h3>
-                            <p>Simulador de exploração espacial com missões cooperativas e pesquisa.</p>
-                        </div>
-                    </article>
-                    <article class="card">
-                        <div class="card-img">
-                            <img src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=500&h=250&fit=crop" alt="Shadow Ops">
-                        </div>
-                        <div class="card-content">
-                            <h3>Shadow Ops</h3>
-                            <p>Stealth, espionagem e estratégia em uma campanha cinematográfica.</p>
-                        </div>
-                    </article>
+                        <div id="gameBoardWrapper" class="game-board-wrapper"></div>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <section>
+        <section class="game-library">
             <div class="container">
-                <h2 class="section-title">Categorias em Alta</h2>
-                <div class="feature-grid">
-                    <div class="feature-card">
-                        <span class="badge">Tendência</span>
-                        <h3>Multiplayer Competitivo</h3>
-                        <p>Conecta-se com jogadores do mundo inteiro em lobbies rápidos e desafios semanais.</p>
-                    </div>
-                    <div class="feature-card">
-                        <span class="badge">Exclusivo</span>
-                        <h3>Experiências Cinemáticas</h3>
-                        <p>Histórias profundas com visuais de alto impacto e missões de alto risco.</p>
-                    </div>
-                    <div class="feature-card">
-                        <span class="badge">Novo</span>
-                        <h3>Realidade Aumentada</h3>
-                        <p>Interaja com ambientes híbridos ao vivo e leve a partida para sua cidade.</p>
+                <h2 class="section-title">Jogos Disponíveis</h2>
+                <div class="cards-grid">
+                    <article class="card">
+                        <div class="card-icon"><i class="fas fa-ghost"></i></div>
+                        <div class="card-content">
+                            <h3>Pac-Man</h3>
+                            <p>Arcade clássico com labirinto e pontos.</p>
+                        </div>
+                    </article>
+                    <article class="card">
+                        <div class="card-icon"><i class="fas fa-flag"></i></div>
+                        <div class="card-content">
+                            <h3>Super Mario</h3>
+                            <p>Plataforma side-scroller com saltos e obstáculos.</p>
+                        </div>
+                    </article>
+                    <article class="card">
+                        <div class="card-icon"><i class="fas fa-th-large"></i></div>
+                        <div class="card-content">
+                            <h3>Jogo da Velha</h3>
+                            <p>Dois jogadores em um tabuleiro leve e rápido.</p>
+                        </div>
+                    </article>
+                    <article class="card">
+                        <div class="card-icon"><i class="fas fa-chess"></i></div>
+                        <div class="card-content">
+                            <h3>Xadrez</h3>
+                            <p>Estratégia real com validação de xeque e xeque-mate.</p>
+                        </div>
+                    </article>
+                    <article class="card">
+                        <div class="card-icon"><i class="fas fa-heart"></i></div>
+                        <div class="card-content">
+                            <h3>War/Paciência</h3>
+                            <p>Modo de cartas competitivo com batalhas e viradas inteligentes.</p>
+                        </div>
+                    </article>
+                    <article class="card">
+                        <div class="card-icon"><i class="fas fa-car-side"></i></div>
+                        <div class="card-content">
+                            <h3>Corrida 3D</h3>
+                            <p>Pista estilizada em pseudo-3D com desvio de obstáculos.</p>
+                        </div>
+                    </article>
+                    <article class="card">
+                        <div class="card-icon"><i class="fas fa-bomb"></i></div>
+                        <div class="card-content">
+                            <h3>Kill B</h3>
+                            <p>O destaque da plataforma: shooter tático com ação acelerada.</p>
+                        </div>
+                    </article>
+                </div>
+
+                <div class="trailer-section">
+                    <h2 class="section-title">Teasers & Trailers</h2>
+                    <div class="trailer-grid">
+                        <article class="promo-card">
+                            <h3>Pac-Man</h3>
+                            <p>Assista ao teaser do clássico de labirinto e pontuação.</p>
+                            <a href="https://www.youtube.com/results?search_query=Pac-Man+trailer" target="_blank" rel="noreferrer">Ver Trailer</a>
+                        </article>
+                        <article class="promo-card">
+                            <h3>Super Mario</h3>
+                            <p>Confira a energia do salto e dos mundos em plataformas vibrantes.</p>
+                            <a href="https://www.youtube.com/results?search_query=Super+Mario+trailer" target="_blank" rel="noreferrer">Ver Trailer</a>
+                        </article>
+                        <article class="promo-card">
+                            <h3>Kill B</h3>
+                            <p>Veja o teaser do destaque da plataforma com ação intensa.</p>
+                            <a href="https://www.youtube.com/results?search_query=Kill+B+game+teaser" target="_blank" rel="noreferrer">Ver Trailer</a>
+                        </article>
                     </div>
                 </div>
             </div>
@@ -133,6 +173,8 @@
             <p>© 2026 Nexus Play — A casa dos jogadores mais rápidos.</p>
         </div>
     </footer>
+
     <script src="session-user.js" defer></script>
+    <script src="games.js" defer></script>
 </body>
 </html>
